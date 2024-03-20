@@ -1,0 +1,47 @@
+[System]
+Name='kuis_123220010'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='urgensi'
+Range=[0 10]
+NumMFs=3
+MF1='RENDAH':'trimf',[0 0 5]
+MF2='SEDANG':'trimf',[2 5 8]
+MF3='TINGGI':'trimf',[5 10 10]
+
+[Input2]
+Name='kompleksitas'
+Range=[0 10]
+NumMFs=3
+MF1='RENDAH':'trimf',[0 0 4]
+MF2='SEDANG':'trimf',[3 5 7]
+MF3='TINGGI':'trimf',[6 10 10]
+
+[Output1]
+Name='prioritas'
+Range=[0 10]
+NumMFs=3
+MF1='RENDAH':'trimf',[0 3 6]
+MF2='SEDANG':'trapmf',[3 6 7 10]
+MF3='TINGGI':'trimf',[6 10 10]
+
+[Rules]
+3 3, 3 (1) : 1
+3 2, 2 (1) : 1
+3 1, 2 (1) : 1
+2 3, 3 (1) : 1
+2 2, 2 (1) : 1
+2 1, 1 (1) : 1
+1 3, 2 (1) : 1
+1 2, 1 (1) : 1
+1 1, 1 (1) : 1
